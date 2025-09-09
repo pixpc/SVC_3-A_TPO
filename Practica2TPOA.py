@@ -1,27 +1,19 @@
 # Practica 2 - Listas y Cadenas
-def main():
 
-    #Pedir una frase 
-    texto = input("Ingresa una frase:")
+frase = input("Ingresa una frase: ")
 
-    #Convertir la frase en split
-    palabras = texto.split()
-    print("\nLista generada:", palabras)
+lista_palabras = frase.split()
+print("\nLista de palabras:", lista_palabras)
 
-    #Mostrar las palabras en mayusculas 
-    print("\nPalabras en mayusculas :")
-    [print(p.upper()) for p in palabras]
+print("\nPalabras en mayúsculas:")
+for palabra in lista_palabras:
+    print(palabra.upper())
 
-    #Contar ocurrencias de cada palabra
-    buscar = input("\nIngrese una palabra a buscar en la lista:")
-    veces = palabras.count(buscar)
-    print(f"La palabra '{buscar}' aparece {veces} veces en la lista.")
+palabra_buscar = input("\n¿Qué palabra quieres contar en la frase?: ")
+conteo = frase.split().count(palabra_buscar)
+print(f"La palabra '{palabra_buscar}' aparece {conteo} veces.")
 
-    #Reemplazar palabra
-    OG = input("\nPalabra a sustituir:")
-    nueva= input("Nueva palabra:")
-    resultado = texto.replace(OG, nueva)
-    print("\nFrase final:", resultado)
-
-if __name__ == "__main__":
-    main()
+palabra_reemplazar = input("\n¿Qué palabra quieres reemplazar?: ")
+nueva_palabra = input("¿Por cuál palabra la quieres reemplazar?: ")
+frase_modificada = frase.replace(palabra_reemplazar, nueva_palabra)
+print("\nFrase modificada:", frase_modificada)
